@@ -1,13 +1,16 @@
-"use client";
-
 import Hero from "./components/Hero";
 import Link from "next/link";
+import { getGalleryImages } from "@/lib/getImages";
 
-export default function Home() {
+// export const revalidate = 3600; // Revalidate every hour
+
+export default async function Home() {
+  const images = await getGalleryImages();
+
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 selection:bg-[#ED1C24]/20 selection:text-[#ED1C24]">
       {/* Hero Section */}
-      <Hero />
+      <Hero imagePaths={images} />
 
       {/* Featured Section */}
       <section className="py-24 sm:py-32 bg-white relative">
