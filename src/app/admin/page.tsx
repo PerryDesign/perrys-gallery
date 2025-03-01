@@ -2,11 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { login } from "./actions";
 
-export default async function AdminPage({
-  searchParams,
-}: {
-  searchParams: { error: string };
-}) {
+export default async function AdminPage() {
   const supabase = await createClient();
 
   const {
@@ -59,12 +55,6 @@ export default async function AdminPage({
               />
             </div>
           </div>
-
-          {searchParams?.error && (
-            <div className="text-red-500 text-sm text-center">
-              {searchParams.error}
-            </div>
-          )}
 
           <div>
             <button
