@@ -20,7 +20,7 @@ const navigationLinks = [
 
 export function Navbar() {
   return (
-    <nav className="fixed w-full z-50 backdrop-blur-sm bg-white">
+    <nav className="fixed w-full z-50 backdrop-blur-sm bg-white/95 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="relative w-32 h-12">
@@ -39,7 +39,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-black/80 hover:text-[#ED1C24] transition-colors"
+                className="text-black/80 hover:text-[#ED1C24] transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -49,25 +49,30 @@ export function Navbar() {
           {/* Mobile Navigation */}
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
-              <button className="text-primary" aria-label="Open menu">
+              <button
+                className="text-black/80 hover:text-[#ED1C24] transition-colors"
+                aria-label="Open menu"
+              >
                 <Menu className="w-6 h-6" />
               </button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-black/95 border-gray-800"
+              className="bg-white border-gray-200"
               aria-describedby="navigation-sheet-description"
             >
-              <SheetTitle className="text-black/80">Navigation Menu</SheetTitle>
+              <SheetTitle className="text-black/80 font-serif text-xl">
+                Menu
+              </SheetTitle>
               <div id="navigation-sheet-description" className="sr-only">
                 Main navigation menu for Perry&apos;s Gallery website
               </div>
-              <div className="flex flex-col space-y-4 mt-8">
+              <div className="flex flex-col space-y-6 mt-8">
                 {navigationLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-black/80 hover:text-[#ED1C24] transition-colors text-lg"
+                      className="text-black/80 hover:text-[#ED1C24] transition-colors text-lg font-medium"
                     >
                       {link.label}
                     </Link>

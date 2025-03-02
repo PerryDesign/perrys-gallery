@@ -2,7 +2,7 @@ import Hero from "./components/Hero";
 import Link from "next/link";
 import { getGalleryImages } from "@/lib/getImages";
 
-// export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 3600; // Revalidate every hour
 
 export default async function Home() {
   const images = await getGalleryImages();
@@ -69,7 +69,7 @@ export default async function Home() {
           </p>
           <Link
             href="https://maps.google.com"
-            className="group inline-flex justify-center w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-[#ED1C24] hover:bg-[#ED1C24]/90 active:bg-[#ED1C24]/80 transition-all duration-500 rounded-full text-base sm:text-lg font-medium text-white shadow-lg shadow-[#ED1C24]/10 hover:shadow-xl hover:shadow-[#ED1C24]/20 transform hover:-translate-y-0.5 relative overflow-hidden"
+            className="group inline-flex justify-center w-auto max-w-[200px] sm:max-w-none sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-[#ED1C24] hover:bg-[#ED1C24]/90 active:bg-[#ED1C24]/80 transition-all duration-500 rounded-full text-base sm:text-lg font-medium text-white shadow-lg shadow-[#ED1C24]/10 hover:shadow-xl hover:shadow-[#ED1C24]/20 transform hover:-translate-y-0.5 relative overflow-hidden"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             <span className="relative">Get Directions</span>

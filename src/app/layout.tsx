@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "A unique space where art meets community in Park Ridge, IL",
 };
 
+// Use a static year to prevent hydration mismatch
+const CURRENT_YEAR = new Date().getFullYear();
+
 export default function RootLayout({
   children,
 }: {
@@ -52,8 +55,7 @@ export default function RootLayout({
             </div>
             <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
               <p>
-                &copy; {new Date().getFullYear()} Perry&apos;s Gallery. All
-                rights reserved.
+                &copy; {CURRENT_YEAR} Perry&apos;s Gallery. All rights reserved.
               </p>
             </div>
           </div>
