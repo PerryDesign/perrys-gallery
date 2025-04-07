@@ -65,12 +65,14 @@ export default async function EventsPage() {
                   <div className="text-gray-300 mb-6">
                     <HtmlContent html={event.description} />
                   </div>
-                  <Link
-                    href={event.eventbrite_url}
-                    className="px-6 py-2 bg-[#ff4b4b] hover:bg-[#ff6b6b] transition-colors rounded-full text-sm inline-block"
-                  >
-                    RSVP
-                  </Link>
+                  {event.eventbrite_url && (
+                    <Link
+                      href={event.eventbrite_url}
+                      className="px-6 py-2 bg-[#ff4b4b] hover:bg-[#ff6b6b] transition-colors rounded-full text-sm inline-block"
+                    >
+                      RSVP
+                    </Link>
+                  )}
                 </div>
               ))
             ) : (
